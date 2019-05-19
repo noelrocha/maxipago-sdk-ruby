@@ -25,7 +25,7 @@ module Maxipago
 
         @http_session.start { |http|
           response = http.post(@uri.path, xml, @header)
-          { header: response, body: response.body, message: response.message }
+          { request_body: xml, header: response, body: response.body, message: response.message }
         }
       end
 
