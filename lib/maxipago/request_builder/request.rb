@@ -15,6 +15,7 @@ module Maxipago
       def send_command(opts)
         xml = build_xml(opts)
         send_request(xml)
+        debugger
       end
 
       private
@@ -25,7 +26,12 @@ module Maxipago
 
         @http_session.start { |http|
           response = http.post(@uri.path, xml, @header)
-          { request_body: xml, header: response, body: response.body, message: response.message }
+          {
+            request_body: xml,
+            header: response,
+            body: response.body,
+            message: response.message
+          }
         }
       end
 
