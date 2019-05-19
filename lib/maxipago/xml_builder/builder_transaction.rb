@@ -265,6 +265,7 @@ module Maxipago
                       xml.onFile {
                         xml.customerId self.options[:customer_id]
                         xml.token self.options[:token]
+                        xml.cvvNumber self.options[:cvv_number] unless self.options[:cvv_number].nil?
                       }
                     end
                   }
