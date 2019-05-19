@@ -15,7 +15,6 @@ module Maxipago
       def send_command(opts)
         xml = build_xml(opts)
         send_request(xml)
-        debugger
       end
 
       private
